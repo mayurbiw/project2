@@ -1,0 +1,89 @@
+body {
+
+height: 95%;
+
+}
+
+#channelList {
+width: 18%;
+max-height: 92vh;
+overflow-y: scroll;
+float: left;
+}
+
+.chatRoom {
+margin-left: 2%;
+float: left;
+width: 60%;
+display: none;
+
+}
+.channelInfo {
+  float: left;
+  display: none;
+  margin-left: 20%;
+}
+
+#channelheading {
+margin-left: 20%;
+}
+
+#totalusers {
+margin-left: 20%;
+}
+
+#joinChannel {
+  margin-left: 10%;
+}
+
+.users {
+  margin-left: 2%;
+  float: left;
+  width: 18%;
+  display: none;
+}
+.chatbox{
+
+  border-right:   2px solid #6d80b5;
+  border-bottom:  2px solid #6d80b5;
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: scroll;
+
+
+}
+
+.messagetext{
+margin-bottom: 3%;
+}
+
+.displaynameerror{
+display: none;
+}
+
+.message{
+  margin-top: 1%;
+  width: 100%;
+}
+
+#messages { list-style-type: none; }
+
+.timestamp
+{
+  color: #a2a3a2;
+}
+#displayname {
+  color: #4d4ab0;
+}
+
+#channels {
+margin-top: 6%;
+}
+
+.labelforchannellist {
+margin-top: 10%;
+}
+
+#alert {
+display:none;
+}

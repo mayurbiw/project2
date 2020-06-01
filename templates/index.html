@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block channelList %}
+<button class="btn btn-outline-danger" id="createchannel" type="button">Create channel</button>
+<label for="channelList" class="labelforchannellist">Channel List</label>
+<ul>
+{% for Channel in channelList  %}
+  <li id="channels">
+    <button class="btn btn-outline-primary channel" type="button"  name="button">{{Channel.name}}</button>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block chatRoom %}
+<label for="displayname" id="displayname" ></label>
+<label for="channelnamelabel" id="channelnamelabel" ></label>
+<div class="chatbox">
+  <ul id="messages">
+  </ul>
+</div>
+<div class="message">
+<form>
+  <input type="hidden" name="channelnamevalue" id="channelnamevalue" value="">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <button type="button" class="btn btn-primary" name="button" id="send">Send</button>
+  <textarea class="form-control" name="text" id="messagetext" aria-label="With textarea"></textarea>
+    <span class="emoji" data-code='&#128514;' style='font-size:30px;'>&#128514;</span>
+    <span class="emoji" data-code='&#128520;' style='font-size:30px;'>&#128520;</span>
+    <span class="emoji" data-code='&#128521;' style='font-size:30px;'>&#128521;</span>
+    <span class="emoji" data-code='&#128526;' style='font-size:30px;'>&#128526;</span>
+    <span class="emoji" data-code='&#128553;' style='font-size:30px;'>&#128553;</span>
+</div>
+</div>
+</form>
+</div>
+{% endblock %}
+
+{% block createChannel %}
+<form action="/createChannel" method="get">
+  <input  type="text" id="channelname" name="channelname"  placeholder="channel name">
+  <button id="create" name="create" class="btn btn-primary" type="submit">Create</button>
+  <button class="btn btn-primary" type="button" id="cancel">Cancel</button>
+  <label id="alert" class="alert alert-danger" for="alert">The channel name already exists</label>
+</form>
+{% endblock %}
+
+{%block users %}
+<h1 id="totalUsers"></h1>
+<ol id="usersList">
+</ol>
+{% endblock %}
+
+{% block channelInfo %}
+<h1 id="channelheading">Channel Name</h1>
+<br>
+<form action="/createUser" method="get">
+<input type="hidden" id="createuser_channelname"  name="channelName" value="">
+<input type="hidden" id="createuser_username" name="userName" value="">
+<button type="submit" class="btn btn-primary" id="joinChannel" name="button">Join this channel to send and receive messages</button>
+</form>
+{% endblock  %}
+
+{% block  displayname  %}
+<h1>You must enter a display name: Please reload the page and enter the display name</h1>
+{% endblock  %}
